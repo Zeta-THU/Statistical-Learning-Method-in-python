@@ -8,11 +8,9 @@
 # time: 285s
 
 
-
 import pandas as pd
 import numpy as np
 import time
-
 
 def loadData(fileName):
     #从文件中读取数据
@@ -39,7 +37,6 @@ def loadData(fileName):
 
     # np.ndarray
     return x_label,y_label
-
 
 def cal_Gx_e(X,Y,div,rule,D,feature):
     '''
@@ -150,7 +147,6 @@ def create_boosting_tree(X,Y,tree_num=50):
 
     return boosting_tree
 
-
 def predict(x,tree):
     '''
     用于预测一个样本的输出
@@ -165,8 +161,6 @@ def predict(x,tree):
         rule=tree[i]['rule']
         alpha=tree[i]['alpha']
         feature=tree[i]['feature']
-
-
 
         # 这里注意，每一个每类器最终预测的Gmx是+1，-1。
         # fx=sum（alpha*Gmx）
@@ -196,8 +190,6 @@ def test(X,Y,tree):
             acc_num += 1
         print(f'testing {i}th data :y_pred={Gx},y={Y[i]}')
         print('now_acc=', acc_num / (i + 1))
-
-
 
 if __name__=='__main__':
 
@@ -238,42 +230,3 @@ if __name__=='__main__':
     #
     # boosting_tree=create_boosting_tree(X_train,y_train,10)
     # test(X_test,y_test,boosting_tree)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

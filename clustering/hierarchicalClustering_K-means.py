@@ -210,12 +210,6 @@ def k_means(start, data, k):
 
     return cluster
 
-
-
-
-
-
-
 if __name__=='__main__':
     data=loadData('iris.txt')
     start=hierarchical_clustering(data,3)
@@ -229,33 +223,6 @@ if __name__=='__main__':
     # start1=[np.random.randint(0,150),np.random.randint(0,150),np.random.randint(0,150)]
     cluster=k_means(start,data,3)
 
-
-
     print(cluster)
 
     print(collections.Counter(cluster.values()))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
